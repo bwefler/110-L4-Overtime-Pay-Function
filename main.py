@@ -1,11 +1,12 @@
-def calculate_pay(hours, rate):
-    if hours <= 40:
-        return hours * rate
-    else:
-        regular_pay = 40 * rate
-        overtime_hours = hours - 40
-        overtime_pay = overtime_hours * rate * 1.5
+def calculate_pay(hours_worked, pay_per_hour):
+    if hours_worked > 40:
+        overtime_hours = hours_worked - 40
+        regular_pay = 40 * pay_per_hour
+        overtime_pay = overtime_hours * pay_per_hour * 2
         return regular_pay + overtime_pay
+    else:
+        regular_pay = 40 * pay_per_hour
+        return regular_pay
 
 # Worked 40 hours at $20 an hour
 print(calculate_pay(40,20))
